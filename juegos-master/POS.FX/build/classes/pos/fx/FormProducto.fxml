@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="411.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.fx.FormProductoController">
-   <children>
-      <TableView fx:id="tableView" layoutX="14.0" layoutY="129.0" prefHeight="252.0" prefWidth="803.0">
+<VBox alignment="CENTER" style="-fx-background-color: white;" stylesheets="@main.css" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pos.fx.FormProductoController">
+       <children>
+      <HBox alignment="TOP_CENTER" prefHeight="152.0" prefWidth="803.0" stylesheets="@main.css">
+         <children>
+            <HBox alignment="CENTER" prefHeight="76.0" prefWidth="264.0" stylesheets="@main.css">
+               <children>
+                  <JFXTextField fx:id="txtBuscar" prefHeight="25.0" prefWidth="208.0" />
+                  <JFXButton fx:id="btnBuscar" mnemonicParsing="false" onAction="#buscar" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: turquoise;" styleClass="jfx-button-info" stylesheets="@main.css" text="Buscar">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="20.0" top="40.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="173.0" prefWidth="519.0" spacing="100.0" stylesheets="@main.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Productos" textFill="#830000">
+                     <font>
+                        <Font name="Arial Black" size="29.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevoProducto" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: pink;" stylesheets="@main.css" text="Nuevo">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="129.0" prefHeight="252.0" prefWidth="803.0" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="colDescripcion" prefWidth="239.0" text="Descripción" />
@@ -20,8 +64,6 @@
             <TableColumn fx:id="colEliminar" prefWidth="69.0" />            
         </columns>
       </TableView>
-      <Button fx:id="btnNuevo" layoutX="766.0" layoutY="86.0" mnemonicParsing="false" onAction="#nuevoProducto" text="Nuevo" />
-      <TextField fx:id="txtBuscar" layoutX="13.0" layoutY="74.0" prefHeight="25.0" prefWidth="208.0" />
-      <Button fx:id="btnBuscar" layoutX="231.0" layoutY="74.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+      <VBox prefHeight="200.0" prefWidth="100.0" />
    </children>
-</AnchorPane>
+</VBox>

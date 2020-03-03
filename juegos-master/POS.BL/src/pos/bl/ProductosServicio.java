@@ -95,8 +95,32 @@ public class ProductosServicio {
         producto2.setPrecio(1500.00);
         producto2.setExistencia(50);
         
+        Producto producto3 = new Producto();
+        producto3.setId(3);
+        producto3.setDescripcion("Call of Duty Modern Warfare");
+        producto3.setPlataforma(plataforma1);
+        producto3.setPrecio(1500.00);
+        producto3.setExistencia(20);
+        
+        Producto producto4 = new Producto();
+        producto4.setId(4);
+        producto4.setDescripcion("God of War");
+        producto4.setPlataforma(plataforma1);
+        producto4.setPrecio(1600.00);
+        producto4.setExistencia(100);
+        
+        Producto producto5 = new Producto();
+        producto5.setId(5);
+        producto5.setDescripcion("Kingdom Hearts");
+        producto5.setPlataforma(plataforma2);
+        producto5.setPrecio(1800.00);
+        producto5.setExistencia(15);
+        
         listadeProductos.add(producto1);
         listadeProductos.add(producto2);
+        listadeProductos.add(producto3);
+        listadeProductos.add(producto4);
+        listadeProductos.add(producto5);
     }   
 
     private Integer obtenerSiguienteId() {
