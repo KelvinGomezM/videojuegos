@@ -26,7 +26,7 @@ public class ProductosServicio {
 
     public ArrayList<Producto> obtenerProductos(String buscar) {
         
-        if (buscar == null && buscar.equals("")) {
+        if (buscar == null || buscar.equals("")) {
             return listadeProductos;
         }
         
@@ -72,6 +72,14 @@ public class ProductosServicio {
     
     public void eliminar(Producto producto) {
         listadeProductos.remove(producto);
+    }
+    public Producto clonar(Producto producto)
+    {
+        Producto productoClonado = new Producto();
+        productoClonado.setId(producto.getId());
+        productoClonado.setDescripcion(producto.getDescripcion());
+        
+        return productoClonado;
     }
     
     private void crearDatosdePrueba() {
